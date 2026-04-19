@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Magnolia Inn & Suites — Family-Owned Comfort Off I-75 in Tifton, GA</title>
+<meta name="description" content="Family-owned motel off I-75 Exit 62 in Tifton, Georgia. Clean rooms from $69/night. Book direct and save 15-18% vs Expedia." />
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><g fill='%23C9A55C'><ellipse cx='16' cy='8' rx='4' ry='6'/><ellipse cx='24' cy='16' rx='6' ry='4'/><ellipse cx='16' cy='24' rx='4' ry='6'/><ellipse cx='8' cy='16' rx='6' ry='4'/><circle cx='16' cy='16' r='3' fill='%231F4D3C'/></g></svg>" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'brand-green': '#1F4D3C',
+        'brand-gold': '#C9A55C',
+        'brand-cream': '#FAF6F0',
+        'brand-charcoal': '#2B2B2B',
+        'brand-gray': '#6B6B6B',
+      },
+      fontFamily: {
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"Inter"', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #2B2B2B;
+    background: #FFFFFF;
+  }
+  h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
+
+  /* Hero Ken Burns */
+  .ken-burns {
+    animation: kenburns 20s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+
+  /* Hero staggered fade */
+  .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.9s ease forwards; }
+  .fade-up-1 { animation-delay: 0.1s; }
+  .fade-up-2 { animation-delay: 0.3s; }
+  .fade-up-3 { animation-delay: 0.5s; }
+  .fade-up-4 { animation-delay: 0.7s; }
+  .fade-up-5 { animation-delay: 0.9s; }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Amenity icon stagger */
+  .amenity-item { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .amenity-item.visible { opacity: 1; transform: translateY(0); }
+
+  /* Card lifts */
+  .card-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+  /* Room image zoom */
+  .room-img-wrap { overflow: hidden; }
+  .room-img { transition: transform 0.6s ease; }
+  .card-lift:hover .room-img { transform: scale(1.06); }
+
+  /* Buttons */
+  .btn-primary {
+    background: #C9A55C;
+    color: #1F4D3C;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(201,165,92,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 22px rgba(201,165,92,0.45);
+    background: #d4b06a;
+  }
+  .btn-secondary {
+    background: #1F4D3C;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: #2a6550;
+    box-shadow: 0 8px 22px rgba(31,77,60,0.35);
+  }
+  .btn-ghost {
+    border: 2px solid #C9A55C;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover {
+    background: #C9A55C;
+    color: #1F4D3C;
+    transform: translateY(-2px);
+  }
+
+  /* Inputs */
+  .booking-input {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #E5E0D5;
+  }
+  .booking-input:focus {
+    outline: none;
+    border-color: #C9A55C;
+    box-shadow: 0 0 0 3px rgba(201,165,92,0.3);
+  }
+
+  /* Nav */
+  .nav-link { position: relative; transition: color 0.2s ease; }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 2px;
+    background: #C9A55C;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  /* Carousel */
+  .testi-track { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+
+  /* Magnolia pattern bg */
+  .magnolia-bg {
+    background-color: #1F4D3C;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(201,165,92,0.08) 0%, transparent 30%),
+      radial-gradient(circle at 80% 70%, rgba(201,165,92,0.08) 0%, transparent 30%),
+      radial-gradient(circle at 50% 50%, rgba(201,165,92,0.04) 0%, transparent 40%);
+  }
+
+  /* Card shadow */
+  .soft-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+  /* Nav transparency */
+  #navbar { transition: background-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease; }
+  #navbar.scrolled { background-color: #FFFFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  #navbar.scrolled .nav-text { color: #2B2B2B; }
+  #navbar.scrolled .logo-text { color: #1F4D3C; }
+  #navbar.scrolled .phone-text { color: #1F4D3C; }
+
+  .nav-text { color: #FFFFFF; }
+  .logo-text { color: #FFFFFF; }
+  .phone-text { color: #FFFFFF; }
+
+  /* Mobile menu */
+  .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .mobile-menu.open { max-height: 500px; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- STICKY NAV -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2">
+      <svg class="w-8 h-8" viewBox="0 0 32 32" fill="#C9A55C" aria-hidden="true">
+        <ellipse cx="16" cy="8" rx="4" ry="6"/><ellipse cx="24" cy="16" rx="6" ry="4"/>
+        <ellipse cx="16" cy="24" rx="4" ry="6"/><ellipse cx="8" cy="16" rx="6" ry="4"/>
+        <circle cx="16" cy="16" r="3" fill="#1F4D3C"/>
+      </svg>
+      <span class="logo-text font-serif text-xl md:text-2xl font-semibold tracking-tight">Magnolia Inn & Suites</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="#home" class="nav-link nav-text text-sm font-medium">Home</a>
+      <a href="#rooms" class="nav-link nav-text text-sm font-medium">Rooms</a>
+      <a href="#amenities" class="nav-link nav-text text-sm font-medium">Amenities</a>
+      <a href="#location" class="nav-link nav-text text-sm font-medium">Location</a>
+      <a href="#contact" class="nav-link nav-text text-sm font-medium">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-5">
+      <a href="tel:+12295550142" class="phone-text text-sm font-semibold flex items-center gap-2">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05z"/></svg>
+        (229) 555-0142
+      </a>
+      <a href="#booking" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Book Direct & Save 15%</a>
+    </div>
+
+    <button id="menuBtn" class="lg:hidden nav-text" aria-label="Menu">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu lg:hidden bg-white">
+    <div class="px-6 py-4 flex flex-col gap-4 border-t border-gray-100">
+      <a href="#home" class="text-brand-charcoal font-medium">Home</a>
+      <a href="#rooms" class="text-brand-charcoal font-medium">Rooms</a>
+      <a href="#amenities" class="text-brand-charcoal font-medium">Amenities</a>
+      <a href="#location" class="text-brand-charcoal font-medium">Location</a>
+      <a href="#contact" class="text-brand-charcoal font-medium">Contact</a>
+      <a href="tel:+12295550142" class="text-brand-green font-semibold">📞 (229) 555-0142</a>
+      <a href="#booking" class="btn-primary px-5 py-3 rounded-lg text-sm text-center">Book Direct & Save 15%</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 ken-burns">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2000" alt="Warm, welcoming motel exterior at golden hour" class="w-full h-full object-cover"/>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/75"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white pt-28 pb-16">
+    <p class="fade-up fade-up-1 text-brand-gold tracking-[0.3em] text-xs md:text-sm uppercase font-medium mb-4">Family-Owned Since 2008</p>
+    <h1 class="fade-up fade-up-2 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-5">
+      Rest Easy on Your<br/>Southern Journey
+    </h1>
+    <p class="fade-up fade-up-3 text-base md:text-lg lg:text-xl text-white/90 font-light mb-10 max-w-2xl mx-auto">
+      Family-owned comfort just off I-75, Exit 62 in Tifton, Georgia
+    </p>
+
+    <!-- Booking Widget -->
+    <div id="booking" class="fade-up fade-up-4 bg-white/95 backdrop-blur rounded-xl p-5 md:p-6 soft-shadow max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+        <div class="text-left">
+          <label class="block text-xs font-semibold text-brand-gray uppercase tracking-wide mb-1.5">Check-in</label>
+          <input type="date" class="booking-input w-full px-3 py-3 rounded-lg text-brand-charcoal text-sm" />
+        </div>
+        <div class="text-left">
+          <label class="block text-xs font-semibold text-brand-gray uppercase tracking-wide mb-1.5">Check-out</label>
+          <input type="date" class="booking-input w-full px-3 py-3 rounded-lg text-brand-charcoal text-sm" />
+        </div>
+        <div class="text-left">
+          <label class="block text-xs font-semibold text-brand-gray uppercase tracking-wide mb-1.5">Guests</label>
+          <select class="booking-input w-full px-3 py-3 rounded-lg text-brand-charcoal text-sm bg-white">
+            <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+            <option>4 Guests</option><option>5+ Guests</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button class="btn-primary w-full px-4 py-3 rounded-lg text-sm">Check Availability</button>
+        </div>
+      </div>
+      <p class="text-xs text-brand-gray mt-4 text-center">
+        ✓ Book direct and save up to 18% vs Expedia. No hidden fees.
+      </p>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="fade-up fade-up-5 mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/90">
+      <span class="flex items-center gap-2"><span class="text-brand-gold text-base">★</span> 4.2 on Google (340+ reviews)</span>
+      <span class="hidden md:inline text-white/40">|</span>
+      <span>Family-Owned Since 2008</span>
+      <span class="hidden md:inline text-white/40">|</span>
+      <span>🐾 Pet Friendly</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BOOK DIRECT -->
+<section class="py-20 md:py-28 bg-brand-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-brand-gold tracking-[0.25em] text-xs uppercase font-semibold mb-3">The Smart Way to Book</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold text-brand-green mb-4">Three Reasons to Book With Us Directly</h2>
+      <p class="text-brand-gray text-base md:text-lg">When you skip the middleman, everybody wins — especially you.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="w-14 h-14 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold text-brand-green mb-3">Save 15–18%</h3>
+        <p class="text-brand-gray leading-relaxed">Skip the booking site fees. Our direct rate is always lower than what you'll find on Expedia or Booking.com.</p>
+      </div>
+
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="w-14 h-14 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold text-brand-green mb-3">Best Rate Guarantee</h3>
+        <p class="text-brand-gray leading-relaxed">Find a lower price elsewhere? We'll match it and give you an extra $10 off your stay. That simple.</p>
+      </div>
+
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="w-14 h-14 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold text-brand-green mb-3">Personal Touch</h3>
+        <p class="text-brand-gray leading-relaxed">Speak directly with Kiran or his family when you book. No call centers, no bots — just real Southern hospitality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms" class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-brand-gold tracking-[0.25em] text-xs uppercase font-semibold mb-3">Our Rooms</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold text-brand-green mb-4">Clean, Comfortable, Affordable</h2>
+      <p class="text-brand-gray text-base md:text-lg">48 rooms across two floors — freshly kept and ready for a great night's sleep.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Standard Queen -->
+      <div class="card-lift bg-white rounded-xl overflow-hidden soft-shadow reveal">
+        <div class="room-img-wrap aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800" alt="Standard Queen room with one queen bed" class="room-img w-full h-full object-cover"/>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-brand-green mb-1">Standard Queen</h3>
+          <p class="text-sm text-brand-gray mb-4">1 Queen Bed · Sleeps 2</p>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="font-serif text-4xl font-semibold text-brand-charcoal">$69</span>
+            <span class="text-brand-gray text-sm">/ night</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5 text-xs text-brand-gray">
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Free Wi-Fi</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">32" TV</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Microwave</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Fridge</span>
+          </div>
+          <a href="#booking" class="btn-secondary block text-center w-full py-3 rounded-lg text-sm">Book This Room</a>
+        </div>
+      </div>
+
+      <!-- Double Queen -->
+      <div class="card-lift bg-white rounded-xl overflow-hidden soft-shadow reveal">
+        <div class="room-img-wrap aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Double Queen room with two queen beds" class="room-img w-full h-full object-cover"/>
+        </div>
+        <div class="p-6">
+          <h3 class="font-serif text-2xl font-semibold text-brand-green mb-1">Double Queen</h3>
+          <p class="text-sm text-brand-gray mb-4">2 Queen Beds · Sleeps 4</p>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="font-serif text-4xl font-semibold text-brand-charcoal">$89</span>
+            <span class="text-brand-gray text-sm">/ night</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5 text-xs text-brand-gray">
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Family Friendly</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Free Wi-Fi</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Microwave</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Fridge</span>
+          </div>
+          <a href="#booking" class="btn-secondary block text-center w-full py-3 rounded-lg text-sm">Book This Room</a>
+        </div>
+      </div>
+
+      <!-- Executive King -->
+      <div class="card-lift bg-white rounded-xl overflow-hidden soft-shadow reveal">
+        <div class="room-img-wrap aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800" alt="Executive King Suite with king bed and sofa" class="room-img w-full h-full object-cover"/>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-1">
+            <h3 class="font-serif text-2xl font-semibold text-brand-green">Executive King Suite</h3>
+            <span class="text-[10px] bg-brand-gold text-brand-green font-bold px-2 py-1 rounded uppercase tracking-wider">Best</span>
+          </div>
+          <p class="text-sm text-brand-gray mb-4">1 King Bed + Sofa · Sleeps 3</p>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="font-serif text-4xl font-semibold text-brand-charcoal">$129</span>
+            <span class="text-brand-gray text-sm">/ night</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5 text-xs text-brand-gray">
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Work Desk</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Premium Linens</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Sofa</span>
+            <span class="bg-brand-cream px-2.5 py-1 rounded-md">Free Wi-Fi</span>
+          </div>
+          <a href="#booking" class="btn-secondary block text-center w-full py-3 rounded-lg text-sm">Book This Room</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" class="py-20 md:py-28 bg-brand-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-brand-gold tracking-[0.25em] text-xs uppercase font-semibold mb-3">On-Site Amenities</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold text-brand-green mb-4">Everything You Need</h2>
+      <p class="text-brand-gray text-base md:text-lg">Thoughtful touches that make the road feel a little less long.</p>
+    </div>
+
+    <div id="amenitiesGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+      <!-- items -->
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Free Wi-Fi</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Free Hot Breakfast</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Outdoor Pool</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Free Parking</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Pet Friendly</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m-4-5v9M3 4h18M3 4v7a4 4 0 004 4h10a4 4 0 004-4V4"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Truck Parking</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">24/7 Front Desk</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Laundry Room</p>
+      </div>
+      <div class="amenity-item bg-white rounded-xl p-6 text-center soft-shadow hover:-translate-y-1 transition-transform duration-300">
+        <svg class="w-8 h-8 mx-auto text-brand-green mb-3" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C7 7 7 12 12 22c5-10 5-15 0-20z"/></svg>
+        <p class="text-xs md:text-sm font-medium text-brand-charcoal">Vegetarian Options</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-brand-gold tracking-[0.25em] text-xs uppercase font-semibold mb-3">Our Location</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold text-brand-green mb-4">Perfectly Placed Off I-75</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal rounded-xl overflow-hidden soft-shadow aspect-[4/3] lg:aspect-auto lg:h-[460px]">
+        <iframe
+          src="https://www.google.com/maps?q=Tifton,Georgia&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Map of Magnolia Inn & Suites in Tifton, GA"></iframe>
+      </div>
+
+      <div class="reveal">
+        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed mb-6">
+          We're located at <span class="font-semibold text-brand-green">Exit 62 off Interstate 75</span> — the ideal stop between Atlanta and Orlando. Minutes from Downtown Tifton, Agrirama, and ABAC. Gas, food, and truck parking all on site.
+        </p>
+        <div class="flex items-start gap-3 mb-6 text-brand-gray">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+          <span>1247 US Highway 82, Tifton, Georgia 31794</span>
+        </div>
+
+        <h3 class="font-serif text-xl font-semibold text-brand-green mb-4">Nearby Attractions</h3>
+        <ul class="space-y-3">
+          <li class="flex justify-between items-center pb-3 border-b border-gray-100">
+            <span class="text-brand-charcoal">Georgia Museum of Agriculture</span>
+            <span class="text-brand-gold font-semibold text-sm">2.1 mi</span>
+          </li>
+          <li class="flex justify-between items-center pb-3 border-b border-gray-100">
+            <span class="text-brand-charcoal">Downtown Tifton</span>
+            <span class="text-brand-gold font-semibold text-sm">3.5 mi</span>
+          </li>
+          <li class="flex justify-between items-center pb-3 border-b border-gray-100">
+            <span class="text-brand-charcoal">Abraham Baldwin Agricultural College</span>
+            <span class="text-brand-gold font-semibold text-sm">1.8 mi</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span class="text-brand-charcoal">Lake Baldwin</span>
+            <span class="text-brand-gold font-semibold text-sm">4.2 mi</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-20 md:py-28 bg-brand-cream overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-brand-gold tracking-[0.25em] text-xs uppercase font-semibold mb-3">Guest Reviews</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold text-brand-green mb-4">What Our Guests Say</h2>
+    </div>
+
+    <!-- Desktop: 3 columns -->
+    <div class="hidden md:grid md:grid-cols-3 gap-6">
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+        <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Clean room, comfortable bed, and the owner was so welcoming. Will stay again on our next Florida trip!"</p>
+        <div>
+          <p class="font-semibold text-brand-green">Sarah M.</p>
+          <p class="text-sm text-brand-gray">Atlanta, GA</p>
+        </div>
+      </div>
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+        <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Perfect stopover off I-75. Great breakfast and the price couldn't be beat. Way cheaper than Expedia showed."</p>
+        <div>
+          <p class="font-semibold text-brand-green">Mike T.</p>
+          <p class="text-sm text-brand-gray">Nashville, TN</p>
+        </div>
+      </div>
+      <div class="card-lift bg-white rounded-xl p-8 soft-shadow reveal">
+        <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+        <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Traveling with our dog was easy here. Pet-friendly without extra nonsense fees. Highly recommend."</p>
+        <div>
+          <p class="font-semibold text-brand-green">Priya S.</p>
+          <p class="text-sm text-brand-gray">Orlando, FL</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: Carousel -->
+    <div class="md:hidden relative reveal">
+      <div class="overflow-hidden">
+        <div id="testiTrack" class="testi-track flex">
+          <div class="min-w-full px-2">
+            <div class="bg-white rounded-xl p-8 soft-shadow">
+              <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+              <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Clean room, comfortable bed, and the owner was so welcoming. Will stay again on our next Florida trip!"</p>
+              <p class="font-semibold text-brand-green">Sarah M.</p>
+              <p class="text-sm text-brand-gray">Atlanta, GA</p>
+            </div>
+          </div>
+          <div class="min-w-full px-2">
+            <div class="bg-white rounded-xl p-8 soft-shadow">
+              <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+              <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Perfect stopover off I-75. Great breakfast and the price couldn't be beat. Way cheaper than Expedia showed."</p>
+              <p class="font-semibold text-brand-green">Mike T.</p>
+              <p class="text-sm text-brand-gray">Nashville, TN</p>
+            </div>
+          </div>
+          <div class="min-w-full px-2">
+            <div class="bg-white rounded-xl p-8 soft-shadow">
+              <div class="text-brand-gold text-lg mb-4">★★★★★</div>
+              <p class="text-brand-charcoal leading-relaxed mb-6 italic">"Traveling with our dog was easy here. Pet-friendly without extra nonsense fees. Highly recommend."</p>
+              <p class="font-semibold text-brand-green">Priya S.</p>
+              <p class="text-sm text-brand-gray">Orlando, FL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2 mt-6" id="testiDots">
+        <button class="w-2 h-2 rounded-full bg-brand-gold" data-idx="0"></button>
+        <button class="w-2 h-2 rounded-full bg-brand-gold/30" data-idx="1"></button>
+        <button class="w-2 h-2 rounded-full bg-brand-gold/30" data-idx="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="py-20 md:py-28 magnolia-bg relative">
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <div class="reveal">
+      <p class="text-brand-gold tracking-[0.3em] text-xs uppercase font-semibold mb-4">Your Room Awaits</p>
+      <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl font-semibold text-white mb-5">Ready for a Good Night's Rest?</h2>
+      <p class="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">Call us directly or book online. No booking fees. No surprises.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:+12295550142" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-lg text-base inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05z"/></svg>
+          Call (229) 555-0142
+        </a>
+        <a href="#booking" class="btn-ghost w-full sm:w-auto px-8 py-4 rounded-lg text-base">Book Online Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#163a2d] text-white/80 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 32 32" fill="#C9A55C"><ellipse cx="16" cy="8" rx="4" ry="6"/><ellipse cx="24" cy="16" rx="6" ry="4"/><ellipse cx="16" cy="24" rx="4" ry="6"/><ellipse cx="8" cy="16" rx="6" ry="4"/><circle cx="16" cy="16" r="3" fill="#163a2d"/></svg>
+          <span class="font-serif text-xl text-white font-semibold">Magnolia Inn & Suites</span>
+        </div>
+        <p class="text-sm leading-relaxed">
+          Proudly owned and operated by the Patel family since 2008. We treat every guest like family — with the kind of Southern hospitality and personal care you just don't find at the chains.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-lg text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex gap-2"><span class="text-brand-gold">📍</span> 1247 US Highway 82<br/>Tifton, Georgia 31794</li>
+          <li><a href="tel:+12295550142" class="hover:text-brand-gold transition-colors">📞 (229) 555-0142</a></li>
+          <li><a href="mailto:info@magnoliainnsuites.com" class="hover:text-brand-gold transition-colors">✉ info@magnoliainnsuites.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-lg text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#rooms" class="hover:text-brand-gold transition-colors">Rooms</a></li>
+          <li><a href="#amenities" class="hover:text-brand-gold transition-colors">Amenities</a></li>
+          <li><a href="#location" class="hover:text-brand-gold transition-colors">Location</a></li>
+          <li><a href="#" class="hover:text-brand-gold transition-colors">Policies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-white/60">
+      © 2025 Magnolia Inn & Suites · Family Owned & Operated
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Amenity stagger
+  const amenityIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const items = e.target.querySelectorAll('.amenity-item');
+        items.forEach((item, i) => {
+          setTimeout(() => item.classList.add('visible'), i * 90);
+        });
+        amenityIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  const aGrid = document.getElementById('amenitiesGrid');
+  if (aGrid) amenityIO.observe(aGrid);
+
+  // Testimonial carousel (mobile)
+  const track = document.getElementById('testiTrack');
+  const dots = document.querySelectorAll('#testiDots button');
+  let idx = 0;
+  function goTo(i) {
+    idx = i;
+    if (track) track.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach((d, di) => {
+      d.className = 'w-2 h-2 rounded-full ' + (di === i ? 'bg-brand-gold' : 'bg-brand-gold/30');
+    });
+  }
+  dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.idx))));
+  setInterval(() => { goTo((idx + 1) % 3); }, 5000);
+
+  // Default dates for booking widget
+  const inputs = document.querySelectorAll('input[type="date"]');
+  if (inputs.length >= 2) {
+    const today = new Date();
+    const tomorrow = new Date(); tomorrow.setDate(today.getDate() + 1);
+    const fmt = d => d.toISOString().split('T')[0];
+    inputs[0].value = fmt(today);
+    inputs[1].value = fmt(tomorrow);
+  }
+</script>
+</body>
+</html>
